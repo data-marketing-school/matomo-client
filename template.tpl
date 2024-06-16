@@ -101,7 +101,7 @@ function generateEventModel(queryParams) {
   queryParams.ua = ua;
   queryParams.event_name = 'page_view';
   
-  
+  if(queryParams.ping) queryParams.event_name = 'heartbeat';
   if(queryParams.e_n) queryParams.event_name = 'event';
   if(queryParams.idgoal && queryParams.idgoal > 0) queryParams.event_name = 'goal';
   if(queryParams.idgoal && queryParams.idgoal == 0 && queryParams.ec_id) {
