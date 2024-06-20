@@ -1,4 +1,6 @@
 homepage: "https://www.data-marketing-school.com"
 versions:
+  - sha: 6f7f6c3993b55b8fdbdd37589a2d3b064e799ebd
+    changeNotes: Add checkbox for js library
   - sha: 54a228695031370b2246249c718b1ccd90c8b83a
     changeNotes: Initial release.
