@@ -65,14 +65,22 @@ ___TEMPLATE_PARAMETERS___
     "displayName": "Allowed Origins",
     "simpleValueType": true,
     "defaultValue": "*",
-    "help": "Enter a comma-separated list of origins (e.g. \u003cstrong\u003ehttps://data-marketing-school.com\u003c/strong\u003e,\u003cstrong\u003ehttps://www.data-marketing-school.com\u003c/strong\u003e or use the asterisk (*) as a wildcard. If the request comes from some other origin, the request will not be claimed. To pass an origin manually, add the \u0026origin\u003d parameter to the request URL."
+    "help": "Enter a comma-separated list of origins (e.g. \u003cstrong\u003ehttps://data-marketing-school.com\u003c/strong\u003e,\u003cstrong\u003ehttps://www.data-marketing-school.com\u003c/strong\u003e or use the asterisk (*) as a wildcard. If the request comes from some other origin, the request will not be claimed. To pass an origin manually, add the \u0026origin\u003d parameter to the request URL.",
+    "valueValidators": [
+      {
+        "type": "REGEX",
+        "args": [
+          "^(\\s*(\\*|https?:\\/\\/\\/?[-a-zA-Z0-9@:%._\\+~#\u003d]{1,256}\\.[a-zA-Z0-9()]{1,6}(?:[-a-zA-Z0-9()@:%_\\+.~#?\u0026\\/\u003d]*)?)\\s*)(,\\s*(\\*|https?:\\/\\/\\/?[-a-zA-Z0-9@:%._\\+~#\u003d]{1,256}\\.[a-zA-Z0-9()]{1,6}(?:[-a-zA-Z0-9()@:%_\\+.~#?\u0026\\/\u003d]*)?)\\s*)*$"
+        ],
+        "errorMessage": "This field should contain either \u003cb\u003e*\u003c/b\u003e or URL starting with \u003cb\u003ehttps://\u003c/b\u003e."
+      }
+    ]
   }
 ]
 
 
 ___SANDBOXED_JS_FOR_SERVER___
 
-// Saisissez le code de votre modèle ici.
 const claimRequest = require('claimRequest');  
 const getRequestPath = require('getRequestPath');
 const path = getRequestPath();
