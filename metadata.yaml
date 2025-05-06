@@ -1,5 +1,7 @@
 homepage: "https://www.data-marketing-school.com"
 versions:
+  - sha: 8a89b22bfe5aecdcc9ec970ec5748327bd023259
+    changeNotes: Add regex validation for allowed origins
   - sha: 6f7f6c3993b55b8fdbdd37589a2d3b064e799ebd
     changeNotes: Add checkbox for js library
   - sha: 54a228695031370b2246249c718b1ccd90c8b83a
